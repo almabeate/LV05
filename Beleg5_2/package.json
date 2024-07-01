@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "@turf/helpers": "^7.0.0",
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "mongodb": "^6.8.0",
+    "nodemon": "^3.1.4",
+    "pug": "^3.0.3"
+  },
+  "name": "new",
+  "version": "1.0.0",
+  "main": "u5-2_alma.js",
+  "devDependencies": {
+    "node": "^20.15.0"
+  },
+  "scripts": {
+    "test": "u5-2_alma.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

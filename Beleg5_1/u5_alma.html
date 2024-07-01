@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Alma Wettig">
+
+  <!-- chart.js Biblotek -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Meine eigenen Skripte -->
+  <script defer src="u5_alma.js"></script>
+  <script defer src="my_functions.js"></script>
+  <link rel="stylesheet" href="u5_alma.css">
+
+  <!-- CSS Bootstrap File -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" /> <!-- css -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script> <!-- javaScript -->
+
+  <title>Webbasierte Karten - Übung 5, SoSe 2024</title>
+
+</head>
+
+<body class="px-2">
+  <div class="grid-container">
+    <div class="item1">
+      <h3 class="display-6"> Übung 5.1</h3>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Menü</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="u5_alma.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Datenschutz</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Suche</button>
+          </form>
+        </div>
+      </nav>
+    </div>
+
+    <div class="item2 px-1 border border-primary-subtle border-3 rounded"> <!-- Rand um die einzelnen Abschnitte -->
+      <h4 class="display-9"> Eingabeformular</h4>
+      <!-- onchange: sobald was hochgeladen wird, wird die Funktion file2text gestartet, mit der die Datei dann lesbar wird -->
+      <form action="/action_page.php" id="inputForm">
+        <p>Bitte laden Sie eine Json-Datei mit den 10 Städten hoch:</p> <!-- -->
+        <input id="json" type="file" class="form-control" required><br>
+        <!--Die Datei ist nötig für die weiteren Schritte, daher: "required" (man kann nicht weitermachen, ohne etwas hochgeladen zu haben) -->
+        <div id="jsonErr" class="d-none bg-danger rounded text-light px-1">
+          <!-- So kann man von unsichtbar zu sichtbar umstellen-->
+          <p>Die ausgewählte Datei ist keine (Geo-)JSON-Datei!</p>
+        </div>
+        <div>
+          <!--<button type="submit" class="btn btn-primary">Absenden</button>-->
+          <input class="btn btn-primary" type="submit" id="submit">
+        </div>
+        <!-- Beim Drücken von "submit " wird ein EventListener aktiviert-->
+      </form>
+    </div>
+    <br>
+
+    <div id="my_map" class="px-1 border border-primary-subtle border-3 rounded item3">
+    </div><br>
+
+  </div>
+</body>
+
+</html>
