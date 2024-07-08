@@ -1,5 +1,5 @@
 "use strict"
-const apiKey = '934842e4e91b6a8fd12dc24981d40b92'; // mein eigener API-Key
+const apiKey = '1234'; // mein eigener API-Key
 let dbCities = {}; // Initialisierung von dbCities
 let tempSorted = []; // Deklaration außerhalb der Funktion
 let nameSorted = []; // Deklaration außerhalb der Funktion
